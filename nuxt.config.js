@@ -1,6 +1,14 @@
+import env from './env'
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL
+  },
+  privateRuntimeConfig: {
+    API_SECRET: '${API_SECRET}'
+  },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -24,7 +32,9 @@ export default {
   plugins: [
     '@/plugins/router',
     '@/plugins/element-ui',
-    '@/plugins/i18n'
+    '@/plugins/i18n',
+    '@/plugins/fetch',
+    '@/services/mods/index'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

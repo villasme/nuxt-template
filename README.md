@@ -18,3 +18,16 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## 拓展
+1. 国际化I8N
+2. pont
+
+## 环境变量配置
+不同环境 不同配置
+
+```text
+<!-- .env -->
+BASE_URL=http://localhost:3000
+API_SECRET=11122222
+```

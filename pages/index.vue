@@ -32,7 +32,12 @@ export default Vue.extend({
   },
   methods: {
     getAbc (): void {
-      this.$message.success('hahaha')
+      console.log(this.$config)
+      API.pet.getPetById.request({petId: 20.301230691039862}).then(() => {
+        console.log('hahah');
+      }).catch(error => {
+        this.$message.error(error.message)
+      })
     }
   }
 })

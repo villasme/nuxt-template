@@ -13,7 +13,6 @@ export default (({ store, route, redirect }) => {
   // })
   const roles = ['test', 'test-id', 'index']
   console.log(route)
-
   if (route.name && roles.indexOf(route.name) === -1) {
     console.log(I18N.middleware.auth.noAuthority)
     redirect('/404')
