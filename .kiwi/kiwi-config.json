@@ -1,0 +1,19 @@
+{
+  "kiwiDir": "./.kiwi",
+  "configFile": "./.kiwi/kiwi-config.json",
+  "srcLang": "zh-CN",
+  "distLangs": [
+    "en-US"
+  ],
+  "googleApiKey": "",
+  "translateOptions": {
+    "concurrentLimit": 10,
+    "requestOptions": {}
+  },
+  "isAutoTranslate": true,
+  "importI18N": "import I18N from '~/src/utils/I18N';",
+  "ignoreDir": "",
+  "ignoreFile": "",
+  "baiduAppid": "",
+  "baiduAK": ""
+}
