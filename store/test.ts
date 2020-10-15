@@ -1,22 +1,27 @@
-interface State {
-    list: any[]
+import { GetterTree, ActionTree, MutationTree } from 'vuex'
+
+export const state = () => ({
+    lycList: [] as any[],
+})
+
+export type RootState = ReturnType<typeof state>
+
+export const mutations: MutationTree<RootState> = {
+    setLycList (state, lycList: any[]) {
+        state.lycList = lycList
+    }
 }
 
-export const state: () => State = () => ({
-    list: []
-  })
-  
-  export const mutations = {
-    add(state: State, text: any) {
-      state.list.push({
-        text,
-        done: false
-      })
-    },
-    remove(state: State, { todo }: any) {
-      state.list.splice(state.list.indexOf(todo), 1)
-    },
-    toggle(state: State, todo: { done: boolean }) {
-      todo.done = !todo.done
+export const getters: GetterTree<RootState, RootState> = {}
+
+export const actions: ActionTree<RootState, RootState> = {
+    async getLYCList ({commit}) {
+        try {
+            const lycList = await API.business.bearingLyc.list.request({})
+            console.log(lycList)
+            commit('setLycList', lycList.list)
+        } catch (error) {
+            // TODO
+        }
     }
 }

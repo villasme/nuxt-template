@@ -16,6 +16,7 @@ import Vue from 'vue'
 import I18N from '~/src/utils/I18N'
 import Logo from '~/components/Logo.vue'
 import Test from '~/components/Test.vue'
+import { mapActions } from 'vuex'
 
 export default Vue.extend({
   data () {
@@ -26,6 +27,10 @@ export default Vue.extend({
       }
     }
   },
+  fetch ( { store } ) {
+    store.dispatch('test/getLYCList')
+    store.dispatch('getLYCList')
+  },
   components: {
     Test,
     Logo
@@ -33,10 +38,8 @@ export default Vue.extend({
   methods: {
     getAbc (): void {
       console.log(this.$config)
-      API.pet.getPetById.request({petId: 20.301230691039862}).then(() => {
-        console.log('hahah');
-      }).catch(error => {
-        this.$message.error(error.message)
+      API.business.bearingLyc.list.request({}).then((res) => {
+        console.log(res);
       })
     }
   }

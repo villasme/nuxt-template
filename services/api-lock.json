@@ -2,287 +2,14 @@
   {
     "mods": [
       {
-        "description": "Everything about your Pets",
-        "name": "pet",
+        "description": "LYC-型号",
+        "name": "bearingLyc",
         "interfaces": [
           {
-            "consumes": [
-              "application/json",
-              "application/xml"
-            ],
-            "description": "Add a new pet to the store",
-            "name": "addPet",
-            "method": "post",
-            "path": "/pet",
-            "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "body",
-                "description": "Pet object that needs to be added to the store",
-                "name": "body",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "Pet",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "consumes": [
-              "application/json",
-              "application/xml"
-            ],
-            "description": "Update an existing pet",
-            "name": "updatePet",
-            "method": "put",
-            "path": "/pet",
-            "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "body",
-                "description": "Pet object that needs to be added to the store",
-                "name": "body",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "Pet",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "description": "Finds Pets by status\nMultiple status values can be provided with comma separated strings",
-            "name": "findPetsByStatus",
-            "method": "get",
-            "path": "/pet/findByStatus",
-            "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "Pet",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "Array",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "query",
-                "description": "Status values that need to be considered for filter",
-                "name": "status",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [
-                    {
-                      "typeArgs": [],
-                      "typeName": "string",
-                      "isDefsType": false,
-                      "templateIndex": -1,
-                      "compileTemplateKeyword": "#/definitions/",
-                      "enum": [],
-                      "typeProperties": []
-                    }
-                  ],
-                  "typeName": "Array",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "description": "Finds Pets by tags\nMultiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
-            "name": "findPetsByTags",
-            "method": "get",
-            "path": "/pet/findByTags",
-            "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "Pet",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "Array",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "query",
-                "description": "Tags to filter by",
-                "name": "tags",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [
-                    {
-                      "typeArgs": [],
-                      "typeName": "string",
-                      "isDefsType": false,
-                      "templateIndex": -1,
-                      "compileTemplateKeyword": "#/definitions/",
-                      "enum": [],
-                      "typeProperties": []
-                    }
-                  ],
-                  "typeName": "Array",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "description": "Find pet by ID\nReturns a single pet",
-            "name": "getPetById",
-            "method": "get",
-            "path": "/pet/{petId}",
-            "response": {
-              "typeArgs": [],
-              "typeName": "Pet",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "path",
-                "description": "ID of pet to return",
-                "name": "petId",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "number",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "consumes": [
-              "application/x-www-form-urlencoded"
-            ],
-            "description": "Updates a pet in the store with form data",
-            "name": "updatePetWithForm",
-            "method": "post",
-            "path": "/pet/{petId}",
-            "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "path",
-                "description": "ID of pet that needs to be updated",
-                "name": "petId",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "number",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              },
-              {
-                "in": "formData",
-                "description": "Updated name of the pet",
-                "name": "name",
-                "required": false,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              },
-              {
-                "in": "formData",
-                "description": "Updated status of the pet",
-                "name": "status",
-                "required": false,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "description": "Deletes a pet",
-            "name": "deletePet",
+            "description": "delete",
+            "name": "remove",
             "method": "delete",
-            "path": "/pet/{petId}",
+            "path": "/business/admin/bearingLyc/delete/{id}",
             "response": {
               "typeArgs": [],
               "typeName": "",
@@ -294,115 +21,11 @@
             },
             "parameters": [
               {
-                "in": "header",
-                "name": "api_key",
-                "required": false,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              },
-              {
                 "in": "path",
-                "description": "Pet id to delete",
-                "name": "petId",
+                "description": "id",
+                "name": "id",
                 "required": true,
                 "dataType": {
-                  "typeArgs": [],
-                  "typeName": "number",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "consumes": [
-              "multipart/form-data"
-            ],
-            "description": "uploads an image",
-            "name": "uploadFile",
-            "method": "post",
-            "path": "/pet/{petId}/uploadImage",
-            "response": {
-              "typeArgs": [],
-              "typeName": "ApiResponse",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "path",
-                "description": "ID of pet to update",
-                "name": "petId",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "number",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              },
-              {
-                "in": "formData",
-                "description": "Additional data to pass to server",
-                "name": "additionalMetadata",
-                "required": false,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              },
-              {
-                "in": "formData",
-                "description": "file to upload",
-                "name": "file",
-                "required": false,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "File",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "description": "Access to Petstore orders",
-        "name": "store",
-        "interfaces": [
-          {
-            "description": "Returns pet inventories by status\nReturns a map of status codes to quantities",
-            "name": "getInventory",
-            "method": "get",
-            "path": "/store/inventory",
-            "response": {
-              "typeArgs": [
-                {
                   "typeArgs": [],
                   "typeName": "",
                   "isDefsType": false,
@@ -410,98 +33,15 @@
                   "compileTemplateKeyword": "#/definitions/",
                   "enum": [],
                   "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "number",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
                 }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": []
+              }
+            ]
           },
           {
-            "consumes": [
-              "application/json"
-            ],
-            "description": "Place an order for a pet",
-            "name": "placeOrder",
+            "description": "list",
+            "name": "list",
             "method": "post",
-            "path": "/store/order",
-            "response": {
-              "typeArgs": [],
-              "typeName": "Order",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "body",
-                "description": "order placed for purchasing the pet",
-                "name": "body",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "Order",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "description": "Find purchase order by ID\nFor valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
-            "name": "getOrderById",
-            "method": "get",
-            "path": "/store/order/{orderId}",
-            "response": {
-              "typeArgs": [],
-              "typeName": "Order",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "path",
-                "description": "ID of pet that needs to be fetched",
-                "name": "orderId",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "number",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "description": "Delete purchase order by ID\nFor valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors",
-            "name": "deleteOrder",
-            "method": "delete",
-            "path": "/store/order/{orderId}",
+            "path": "/business/admin/bearingLyc/list",
             "response": {
               "typeArgs": [],
               "typeName": "",
@@ -513,13 +53,54 @@
             },
             "parameters": [
               {
-                "in": "path",
-                "description": "ID of the order that needs to be deleted",
-                "name": "orderId",
-                "required": true,
+                "in": "query",
+                "name": "list",
+                "required": false,
                 "dataType": {
                   "typeArgs": [],
-                  "typeName": "number",
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "page",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "size",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "total",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
                   "isDefsType": false,
                   "templateIndex": -1,
                   "compileTemplateKeyword": "#/definitions/",
@@ -528,21 +109,34 @@
                 }
               }
             ]
+          },
+          {
+            "description": "save",
+            "name": "save",
+            "method": "post",
+            "path": "/business/admin/bearingLyc/save",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
           }
         ]
       },
       {
-        "description": "Operations about user",
-        "name": "user",
+        "description": "大章",
+        "name": "chapter",
         "interfaces": [
           {
-            "consumes": [
-              "application/json"
-            ],
-            "description": "Create user\nThis can only be done by the logged in user.",
-            "name": "createUser",
-            "method": "post",
-            "path": "/user",
+            "description": "delete",
+            "name": "remove",
+            "method": "delete",
+            "path": "/business/admin/chapter/delete/{id}",
             "response": {
               "typeArgs": [],
               "typeName": "",
@@ -554,58 +148,13 @@
             },
             "parameters": [
               {
-                "in": "body",
-                "description": "Created user object",
-                "name": "body",
+                "in": "path",
+                "description": "id",
+                "name": "id",
                 "required": true,
                 "dataType": {
                   "typeArgs": [],
-                  "typeName": "User",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "consumes": [
-              "application/json"
-            ],
-            "description": "Creates list of users with given input array",
-            "name": "createUsersWithArrayInput",
-            "method": "post",
-            "path": "/user/createWithArray",
-            "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "body",
-                "description": "List of user object",
-                "name": "body",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [
-                    {
-                      "typeArgs": [],
-                      "typeName": "User",
-                      "isDefsType": true,
-                      "templateIndex": -1,
-                      "compileTemplateKeyword": "#/definitions/",
-                      "enum": [],
-                      "typeProperties": []
-                    }
-                  ],
-                  "typeName": "Array",
+                  "typeName": "",
                   "isDefsType": false,
                   "templateIndex": -1,
                   "compileTemplateKeyword": "#/definitions/",
@@ -616,58 +165,13 @@
             ]
           },
           {
-            "consumes": [
-              "application/json"
-            ],
-            "description": "Creates list of users with given input array",
-            "name": "createUsersWithListInput",
-            "method": "post",
-            "path": "/user/createWithList",
-            "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "body",
-                "description": "List of user object",
-                "name": "body",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [
-                    {
-                      "typeArgs": [],
-                      "typeName": "User",
-                      "isDefsType": true,
-                      "templateIndex": -1,
-                      "compileTemplateKeyword": "#/definitions/",
-                      "enum": [],
-                      "typeProperties": []
-                    }
-                  ],
-                  "typeName": "Array",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "description": "Logs user into the system",
-            "name": "loginUser",
+            "description": "list",
+            "name": "list",
             "method": "get",
-            "path": "/user/login",
+            "path": "/business/admin/chapter/list",
             "response": {
               "typeArgs": [],
-              "typeName": "string",
+              "typeName": "",
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
@@ -677,12 +181,12 @@
             "parameters": [
               {
                 "in": "query",
-                "description": "The user name for login",
-                "name": "username",
+                "description": "page",
+                "name": "page",
                 "required": true,
                 "dataType": {
                   "typeArgs": [],
-                  "typeName": "string",
+                  "typeName": "",
                   "isDefsType": false,
                   "templateIndex": -1,
                   "compileTemplateKeyword": "#/definitions/",
@@ -692,12 +196,12 @@
               },
               {
                 "in": "query",
-                "description": "The password for login in clear text",
-                "name": "password",
+                "description": "size",
+                "name": "size",
                 "required": true,
                 "dataType": {
                   "typeArgs": [],
-                  "typeName": "string",
+                  "typeName": "",
                   "isDefsType": false,
                   "templateIndex": -1,
                   "compileTemplateKeyword": "#/definitions/",
@@ -708,10 +212,266 @@
             ]
           },
           {
-            "description": "Logs out current logged in user session",
-            "name": "logoutUser",
+            "description": "save",
+            "name": "save",
+            "method": "post",
+            "path": "/business/admin/chapter/save",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "description": "课程",
+        "name": "course",
+        "interfaces": [
+          {
+            "description": "delete",
+            "name": "remove",
+            "method": "delete",
+            "path": "/business/admin/course/delete/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "list",
+            "name": "list",
             "method": "get",
-            "path": "/user/logout",
+            "path": "/business/admin/course/list",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "description": "page",
+                "name": "page",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "description": "size",
+                "name": "size",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "save",
+            "name": "save",
+            "method": "post",
+            "path": "/business/admin/course/save",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "description": "小节",
+        "name": "section",
+        "interfaces": [
+          {
+            "description": "delete",
+            "name": "remove",
+            "method": "delete",
+            "path": "/business/admin/section/delete/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "list",
+            "name": "list",
+            "method": "post",
+            "path": "/business/admin/section/list",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "name": "list",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "page",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "size",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "total",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "save",
+            "name": "save",
+            "method": "post",
+            "path": "/business/admin/section/save",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "name": "business",
+    "baseClasses": []
+  },
+  {
+    "mods": [
+      {
+        "description": "系统管理-特色同时",
+        "name": "test",
+        "interfaces": [
+          {
+            "description": "test",
+            "name": "test",
+            "method": "get",
+            "path": "/system/test",
             "response": {
               "typeArgs": [],
               "typeName": "",
@@ -724,45 +484,10 @@
             "parameters": []
           },
           {
-            "description": "Get user by user name",
-            "name": "getUserByName",
-            "method": "get",
-            "path": "/user/{username}",
-            "response": {
-              "typeArgs": [],
-              "typeName": "User",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": [
-              {
-                "in": "path",
-                "description": "The name that needs to be fetched. Use user1 for testing. ",
-                "name": "username",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          },
-          {
-            "consumes": [
-              "application/json"
-            ],
-            "description": "Updated user\nThis can only be done by the logged in user.",
-            "name": "updateUser",
+            "description": "test",
+            "name": "putTest",
             "method": "put",
-            "path": "/user/{username}",
+            "path": "/system/test",
             "response": {
               "typeArgs": [],
               "typeName": "",
@@ -772,44 +497,29 @@
               "enum": [],
               "typeProperties": []
             },
-            "parameters": [
-              {
-                "in": "path",
-                "description": "name that need to be updated",
-                "name": "username",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              },
-              {
-                "in": "body",
-                "description": "Updated user object",
-                "name": "body",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "User",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
+            "parameters": []
           },
           {
-            "description": "Delete user\nThis can only be done by the logged in user.",
-            "name": "deleteUser",
+            "description": "test",
+            "name": "postTest",
+            "method": "post",
+            "path": "/system/test",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "test",
+            "name": "deleteTest",
             "method": "delete",
-            "path": "/user/{username}",
+            "path": "/system/test",
             "response": {
               "typeArgs": [],
               "typeName": "",
@@ -819,447 +529,76 @@
               "enum": [],
               "typeProperties": []
             },
-            "parameters": [
-              {
-                "in": "path",
-                "description": "The name that needs to be deleted",
-                "name": "username",
-                "required": true,
-                "dataType": {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "baseClasses": [
-      {
-        "name": "ApiResponse",
-        "templateArgs": [],
-        "properties": [
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "code",
-            "required": false
+            "parameters": []
           },
           {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "message",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "type",
-            "required": false
-          }
-        ]
-      },
-      {
-        "name": "Category",
-        "templateArgs": [],
-        "properties": [
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "id",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "name",
-            "required": false
-          }
-        ]
-      },
-      {
-        "name": "Order",
-        "templateArgs": [],
-        "properties": [
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "boolean",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "complete",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "id",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "petId",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "quantity",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "shipDate",
-            "required": false
-          },
-          {
-            "dataType": {
+            "description": "test",
+            "name": "optionsTest",
+            "method": "options",
+            "path": "/system/test",
+            "response": {
               "typeArgs": [],
               "typeName": "",
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                "'placed'",
-                "'approved'",
-                "'delivered'"
-              ],
-              "typeProperties": []
-            },
-            "name": "status",
-            "description": "Order Status",
-            "required": false
-          }
-        ]
-      },
-      {
-        "name": "Pet",
-        "templateArgs": [],
-        "properties": [
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "Category",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
               "enum": [],
               "typeProperties": []
             },
-            "name": "category",
-            "required": false
+            "parameters": []
           },
           {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "id",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "name",
-            "required": true
-          },
-          {
-            "dataType": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "string",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "Array",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "photoUrls",
-            "required": true
-          },
-          {
-            "dataType": {
+            "description": "test",
+            "name": "headTest",
+            "method": "head",
+            "path": "/system/test",
+            "response": {
               "typeArgs": [],
               "typeName": "",
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                "'available'",
-                "'pending'",
-                "'sold'"
-              ],
+              "enum": [],
               "typeProperties": []
             },
-            "name": "status",
-            "description": "pet status in the store",
-            "required": false
+            "parameters": []
           },
           {
-            "dataType": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "Tag",
-                  "isDefsType": true,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "Array",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "tags",
-            "required": false
-          }
-        ]
-      },
-      {
-        "name": "Tag",
-        "templateArgs": [],
-        "properties": [
-          {
-            "dataType": {
+            "description": "test",
+            "name": "patchTest",
+            "method": "patch",
+            "path": "/system/test",
+            "response": {
               "typeArgs": [],
-              "typeName": "number",
+              "typeName": "",
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
               "typeProperties": []
             },
-            "name": "id",
-            "required": false
+            "parameters": []
           },
           {
-            "dataType": {
+            "description": "test",
+            "name": "traceTest",
+            "method": "trace",
+            "path": "/system/test",
+            "response": {
               "typeArgs": [],
-              "typeName": "string",
+              "typeName": "",
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
               "typeProperties": []
             },
-            "name": "name",
-            "required": false
-          }
-        ]
-      },
-      {
-        "name": "User",
-        "templateArgs": [],
-        "properties": [
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "email",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "firstName",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "id",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "lastName",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "password",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "phone",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "number",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "userStatus",
-            "description": "User Status",
-            "required": false
-          },
-          {
-            "dataType": {
-              "typeArgs": [],
-              "typeName": "string",
-              "isDefsType": false,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "name": "username",
-            "required": false
+            "parameters": []
           }
         ]
       }
     ],
-    "name": ""
+    "name": "system",
+    "baseClasses": []
   }
 ]

@@ -1,4 +1,12 @@
-import * as defs from './baseClass';
-import './mods/';
+import { defs as businessDefs, business } from './business';
 
-window.defs = defs;
+import { defs as systemDefs, system } from './system';
+
+window.defs = {
+  business: businessDefs,
+  system: systemDefs,
+};
+window.API = {
+  business,
+  system,
+};

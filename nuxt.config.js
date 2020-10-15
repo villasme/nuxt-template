@@ -34,7 +34,7 @@ export default {
     '@/plugins/element-ui',
     '@/plugins/i18n',
     '@/plugins/fetch',
-    '@/services/mods/index'
+    '@/services/index'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
