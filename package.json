@@ -40,7 +40,9 @@
     "jest": "^26.4.2",
     "js-cookie": "^2.2.1",
     "pont-engine": "1.0.6",
+    "pre-commit": "^1.2.2",
     "ts-jest": "^26.3.0",
     "vue-jest": "^3.0.4"
-  }
+  },
+  "pre-commit": "lint"
 }
