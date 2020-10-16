@@ -1,27 +1,38 @@
-import { GetterTree, ActionTree, MutationTree } from 'vuex'
+import { getAccessorType, mutationTree, getterTree, actionTree } from 'nuxt-typed-vuex'
 
 export const state = () => ({
-    lycList: [] as any[],
+    List1: [] as any[],
 })
 
-export type RootState = ReturnType<typeof state>
+export type TestModuleState = ReturnType<typeof state>
 
-export const mutations: MutationTree<RootState> = {
-    setLycList (state, lycList: any[]) {
-        state.lycList = lycList
+export const mutations = mutationTree(state, {
+    setList1 (state, aList: any[]) {
+        state.List1 = aList
     }
-}
+})
 
-export const getters: GetterTree<RootState, RootState> = {}
+export const getters = getterTree(state, {
+    getName() {}
+})
 
-export const actions: ActionTree<RootState, RootState> = {
-    async getLYCList ({commit}) {
-        try {
-            const lycList = await API.business.bearingLyc.list.request({})
-            console.log(lycList)
-            commit('setLycList', lycList.list)
-        } catch (error) {
-            // TODO
-        }
+export const actions = actionTree(
+    { state, getters, mutations }, 
+    {
+        async getList ({commit}) {
+            try {
+                const resList = await API.business.bearingLyc.list.request({})
+                commit('setList1', resList.list)
+            } catch (error) {
+                // TODO
+            }
+        },
     }
-}
+)
+
+export const accessorType = getAccessorType({
+    state,
+    getters,
+    mutations,
+    actions
+})

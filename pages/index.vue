@@ -7,6 +7,10 @@
       </h1>
       <Test :user="user" />
        <nuxt-link to="/test/12">{{I18N.common.test}}</nuxt-link>
+       <el-table :data="testList">
+         <el-table-column :label="'品牌'" prop="brand"></el-table-column>
+         <el-table-column :label="'型号'" prop="name"></el-table-column>
+       </el-table>
     </div>
   </div>
 </template>
@@ -16,7 +20,7 @@ import Vue from 'vue'
 import I18N from '~/src/utils/I18N'
 import Logo from '~/components/Logo.vue'
 import Test from '~/components/Test.vue'
-import { mapActions } from 'vuex'
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   data () {
@@ -27,20 +31,19 @@ export default Vue.extend({
       }
     }
   },
-  fetch ( { store } ) {
-    store.dispatch('test/getLYCList')
-    store.dispatch('getLYCList')
-  },
+  fetch ( { store, app: {$accessor} } ) {},
   components: {
     Test,
     Logo
   },
+  computed: {
+    ...mapState({
+      testList: (state: any) => state.list
+    })
+  },
   methods: {
     getAbc (): void {
-      console.log(this.$config)
-      API.business.bearingLyc.list.request({}).then((res) => {
-        console.log(res);
-      })
+      this.$accessor.getList()
     }
   }
 })
