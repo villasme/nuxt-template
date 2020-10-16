@@ -1,12 +1,13 @@
+import I18N from '~/src/utils/I18N';
 import axios from 'axios'
 import { PontCore } from '~/services/pontCore'
 
-export default ({ $config }) => {
+export default ({ $config }: any) => {
   const instance = axios.create({
     baseURL: $config.baseURL
   })
 
-  function fetchFun (url, options) {
+  function fetchFun (url: any, options: any) {
     if (options === void 0) {
       options = {}
     }
@@ -21,7 +22,7 @@ export default ({ $config }) => {
         return res.data.content
       } else {
         return Promise.reject({
-          message: res.data.message || '请求超时...'
+          message: res.data.message || I18N.plugins.fetch.SrEv
         })
       }
     })
