@@ -1,14 +1,32 @@
 <template>
   <div class="flex">
     <div class="left-menu">
-      aa
+      <el-select v-model="currLang" placeholder="切换中英文" @change="changeLang">
+        <el-option label="中文" value="zh-CN" />
+        <el-option label="英文" value="en-US" />
+      </el-select>
     </div>
     <Nuxt />
   </div>
 </template>
-<script>
+<script lang="ts">
+import Cookie from 'js-cookie'
 export default {
-  middleware: ['auth']
+  middleware: ['auth'],
+  data () {
+    return {
+      currLang: 'zh-CN'
+    }
+  },
+  mounted () {
+    this.currLang = Cookie.get('lang') || 'zh-CN'
+  },
+  methods: {
+    changeLang (value: string) {
+      Cookie.set('lang', value)
+      this.$router.go(0)
+    }
+  }
 }
 </script>
 

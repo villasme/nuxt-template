@@ -4,7 +4,7 @@ import en from '~/.kiwi/en-US/index'
 
 const cookieLang = Cookies.get('lang')
 
-let I18N = zh
+let I18N: typeof zh
 switch (cookieLang) {
   case 'zh-CN':
     I18N = zh
