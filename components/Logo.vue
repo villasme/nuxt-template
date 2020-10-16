@@ -14,7 +14,7 @@
         fill="#2F495E"
       />
     </svg>
-    {{a}}
+    {{ a }}
   </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
       default: 'hhaha'
     } as PropOptions<String>
   }
-} 
+}
 </script>
 
 <style>

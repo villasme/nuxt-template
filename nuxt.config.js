@@ -1,5 +1,3 @@
-import env from './env'
-
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -8,6 +6,13 @@ export default {
   },
   privateRuntimeConfig: {
     API_SECRET: '${API_SECRET}'
+  },
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './pages/**/*.{ts,js,vue}'
+      }
+    }
   },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -53,6 +58,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: [/^element-ui/],
-  },
+    transpile: [/^element-ui/]
+  }
 }

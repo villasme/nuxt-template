@@ -1,7 +1,6 @@
-import I18N from '~/src/utils/I18N';
 import { Middleware } from '@nuxt/types'
 
-export default (({ store, route, redirect }) => {
+export default (({ route, redirect }) => {
   // Check if user is connected first
   // if (!store.getters['user/user'].isAuthenticated) return redirect('/login')
 
@@ -12,9 +11,7 @@ export default (({ store, route, redirect }) => {
   //   return 0
   // })
   const roles = ['test', 'test-id', 'index']
-  console.log(route)
-  if (route.name && roles.indexOf(route.name) === -1) {
-    console.log(I18N.middleware.auth.noAuthority)
+  if (route.name && !roles.includes(route.name)) {
     redirect('/404')
   }
   // Get highest authorization level
@@ -27,4 +24,4 @@ export default (({ store, route, redirect }) => {
   //     message: 'Du måste vara admin för att besöka denna sidan.'
   //   })
   // }
-}) as Middleware;
+}) as Middleware

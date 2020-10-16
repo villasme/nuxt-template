@@ -1,25 +1,26 @@
 <template>
-    <div class="container">
-        <p>hhahah</p>
-        <Carousel />
-        <nuxt-link to="/">index</nuxt-link>
-    </div>
+  <div class="container">
+    <p>hhahah</p>
+    <Carousel />
+    <nuxt-link to="/">
+      index
+    </nuxt-link>
+  </div>
 </template>
 
 <script lang="ts">
-import Carousel from "./Carousel.vue";
+import Carousel from './Carousel.vue'
+let a
 
 export default {
-    mounted() {
-        console.log(this)
-    },
-    components: {
-        Carousel,
-    },
-    meta: {
-        auth: { authority: 2 },
-    },
-};
+  components: {
+    Carousel
+  },
+  mounted () {},
+  meta: {
+    auth: { authority: 'a' }
+  }
+}
 </script>
 
 <style>

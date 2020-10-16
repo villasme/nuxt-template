@@ -1,17 +1,17 @@
 <template>
-    <div class="block">
-        <span class="demonstration">{{I18N.test.Carousel.defaultIndication}}</span>
-        <el-carousel height="150px">
-            <el-carousel-item v-for="item in 4" :key="item">
-                <h3 class="small">{{ item }}</h3>
-            </el-carousel-item>
-        </el-carousel>
-    </div>
+  <div class="block">
+    <span class="demonstration">{{ I18N.test.Carousel.defaultIndication }}</span>
+    <el-carousel height="150px">
+      <el-carousel-item v-for="item in 4" :key="item">
+        <h3 class="small">
+          {{ item }}
+        </h3>
+      </el-carousel-item>
+    </el-carousel>
+  </div>
 </template>
 
 <script lang="ts">
-// TODO: 这里很丑
-import I18N from '~/src/utils/I18N'
 export default {}
 </script>
 
