@@ -5,3 +5,4 @@ dist/
 static/
 services/
 plugins/
+nuxt.config.js

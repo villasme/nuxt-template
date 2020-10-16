@@ -10,7 +10,6 @@
 
 <script lang="ts">
 import Carousel from './Carousel.vue'
-let a
 
 export default {
   components: {
