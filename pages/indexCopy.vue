@@ -1,5 +1,5 @@
 <template>
-    <div class=""></div>
+    <div class="">copy</div>
 </template>
 
 <script lang="ts">

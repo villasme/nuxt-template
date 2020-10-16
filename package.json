@@ -7,7 +7,13 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "test": "jest"
+    "test": "jest",
+    "kiwi-init": "v-kiwi --init",
+    "kiwi-extract": "npm run kiwi-extract-pages & npm run kiwi-extract-middleware & npm run kiwi-extract-plugins",
+    "kiwi-extract-pages": "v-kiwi --extract ./pages",
+    "kiwi-extract-middleware": "v-kiwi --extract ./middleware",
+    "kiwi-extract-plugins": "v-kiwi --extract ./plugins",
+    "kiwi-sync": "v-kiwi --sync"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
@@ -23,6 +29,7 @@
     "@nuxt/types": "^2.14.5",
     "@nuxt/typescript-build": "^2.0.3",
     "@types/js-cookie": "^2.2.6",
+    "@villas/kiwi-clis": "^1.0.6",
     "@vue/test-utils": "^1.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.3.0",

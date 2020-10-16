@@ -8,8 +8,8 @@
       <Test :user="user" />
        <nuxt-link to="/test/12">{{I18N.common.test}}</nuxt-link>
        <el-table :data="testList">
-         <el-table-column :label="'品牌'" prop="brand"></el-table-column>
-         <el-table-column :label="'型号'" prop="name"></el-table-column>
+         <el-table-column  :label="tableLabes.brand" prop="brand"></el-table-column>
+         <el-table-column :label="tableLabes.name" prop="name"></el-table-column>
        </el-table>
     </div>
   </div>
@@ -27,7 +27,11 @@ export default Vue.extend({
     return {
       user: {
         firstName: 'hahah',
-        lastName: 'lastName'
+        lastName: 'lastName',
+      },
+      tableLabes: {
+        brand: I18N.pages.index.brand,
+        name: I18N.pages.index.pCEm
       }
     }
   },
@@ -42,6 +46,9 @@ export default Vue.extend({
     })
   },
   methods: {
+    /** 
+     * 获取ABC的方法
+     */
     getAbc (): void {
       this.$accessor.getList()
     }
