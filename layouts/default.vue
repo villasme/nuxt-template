@@ -10,8 +10,10 @@
   </div>
 </template>
 <script lang="ts">
+import Vue from 'vue'
 import Cookie from 'js-cookie'
-export default {
+
+export default Vue.extend({
   middleware: ['auth'],
   data () {
     return {
@@ -27,7 +29,7 @@ export default {
       this.$router.go(0)
     }
   }
-}
+})
 </script>
 
 <style>
