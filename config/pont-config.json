@@ -1,11 +1,12 @@
 {
-  "originType": "SwaggerV3",
   "origins": [
     {
+    "originType": "SwaggerV3",
       "name": "business",
       "originUrl": "http://127.0.0.1:9000/business/v3/api-docs"
     },
     {
+      "originType": "SwaggerV3",
       "name": "system",
       "originUrl": "http://localhost:9000/system/v3/api-docs"
     }
