@@ -42,7 +42,7 @@ export default class MyGenerator extends CodeGenerator {
      * @desc ${inter.description}
      */
 
-    import * as defs from '~/services/baseClass';
+    import * as defs from '../../baseClass';
     import { PontCore } from '~/services/pontCore';
 
     export ${paramsCode}

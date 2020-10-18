@@ -10,11 +10,11 @@
       "originUrl": "http://localhost:9000/system/v3/api-docs"
     }
   ],
-  "templatePath": "./config/pontTemplate",
-  "outDir": "./services",
-  "surrounding": "javaScript",
+  "templatePath": "./pontTemplate",
+  "outDir": "../services",
   "mocks": {
     "enable": true
   },
-  "templateType": "fetch"
+  "templateType": "fetch",
+  "surrounding": "javaScript"
 }

@@ -2,7 +2,7 @@
  * @desc test
  */
 
-import * as defs from '~/services/baseClass';
+import * as defs from '../../baseClass';
 import { PontCore } from '~/services/pontCore';
 
 export class Params {}
