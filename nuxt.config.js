@@ -38,7 +38,7 @@ export default {
     '@/plugins/iview',
     '@/plugins/i18n',
     '@/plugins/fetch',
-    '@/services/index'
+    '@/plugins/services'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

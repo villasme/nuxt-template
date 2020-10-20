@@ -1,13 +1,13 @@
 <template>
   <div class="block">
     <span class="demonstration">{{ I18N.test.Carousel.defaultIndication }}</span>
-    <el-carousel height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
-        <h3 class="small">
+    <Carousel autoplay class="carousel-wrap">
+      <CarouselItem v-for="item in 4" :key="item">
+        <h3 :class="`carousel-wrap item-${item}`">
           {{ item }}
         </h3>
-      </el-carousel-item>
-    </el-carousel>
+      </CarouselItem>
+    </Carousel>
   </div>
 </template>
 
@@ -15,23 +15,29 @@
 export default {}
 </script>
 
-<style>
+<style scoped>
 .block {
-    color: blue;
+    font-size: 40px;
+    color: white;
 }
-.el-carousel__item h3 {
-    color: #475669;
-    font-size: 14px;
-    opacity: 0.75;
-    line-height: 150px;
-    margin: 0;
+.carousel-wrap {
+  width: 600px;
+  height: 300px;
 }
 
-.el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
+.ivu-carousel-list {
+  height: 100%;
 }
-
-.el-carousel__item:nth-child(2n + 1) {
-    background-color: #d3dce6;
+.item-1 {
+  background-color: #475669;
+}
+.item-2 {
+  background-color: yellow;
+}
+.item-3 {
+  background-color: blueviolet;
+}
+.item-4 {
+  background-color: red;
 }
 </style>
