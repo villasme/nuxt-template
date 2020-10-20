@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import I18N from '~/src/utils/I18N'
+import I18N from '~/assets/utils/I18N'
 
 export default {
   mounted () {

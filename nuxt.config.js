@@ -1,6 +1,5 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: false,
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL
   },
@@ -17,7 +16,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'zsy',
+    title: '官网',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,13 +29,13 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'view-design/dist/styles/iview.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/router',
-    '@/plugins/element-ui',
+    '@/plugins/iview',
     '@/plugins/i18n',
     '@/plugins/fetch',
     '@/services/index'
@@ -58,6 +57,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: [/^element-ui/]
+    transpile: [/^iview/],
+    vendor: ['axios']
   }
 }

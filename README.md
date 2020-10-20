@@ -24,6 +24,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 2. [pont](https://github.com/alibaba/pont)
 3. [支持nuxt-typed-vuex (类型提示)](https://typed-vuex.roe.dev/) 
 4. [nuxt-typescript](https://typescript.nuxtjs.org/zh-Hans/guide/)
+5. [iview](https://www.iviewui.com/docs/introduce)
 
 ## 环境变量配置
 不同环境 不同配置

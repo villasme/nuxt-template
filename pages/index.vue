@@ -2,23 +2,14 @@
   <div class="container">
     <div>
       <Logo a="aaa" />
-      <h1 class="title" @click="getAbc">
+      <h1 class="title">
         zsy
       </h1>
       <Test :user="user" />
       <nuxt-link to="/test/12">
         {{ I18N.common.test }}
       </nuxt-link>
-      <el-table :data="testList">
-        <el-table-column
-          :label="tableLabes.brand"
-          prop="brand"
-        />
-        <el-table-column
-          :label="tableLabes.name"
-          prop="name"
-        />
-      </el-table>
+      <Table :columns="columns1" :data="testList" />
     </div>
   </div>
 </template>
@@ -26,7 +17,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState } from 'vuex'
-import I18N from '~/src/utils/I18N'
+import I18N from '~/assets/utils/I18N'
 import Logo from '~/components/Logo.vue'
 import Test from '~/components/Test.vue'
 
@@ -35,31 +26,31 @@ export default Vue.extend({
     Test,
     Logo
   },
-  fetch () {},
+  fetch () {
+    this.$accessor.getList()
+  },
   data () {
     return {
       user: {
         firstName: 'hahah',
         lastName: 'lastName'
       },
-      tableLabes: {
-        brand: I18N.pages.index.brand,
-        name: I18N.pages.index.pCEm
-      }
+      columns1: [
+        {
+          title: I18N.pages.index.brand,
+          key: 'brand'
+        },
+        {
+          title: I18N.pages.index.pCEm,
+          key: 'name'
+        }
+      ]
     }
   },
   computed: {
     ...mapState({
       testList: (state: any) => state.list
     })
-  },
-  methods: {
-    /**
-         * 获取ABC的方法
-         */
-    getAbc (): void {
-      this.$accessor.getList()
-    }
   }
 })
 </script>

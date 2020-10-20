@@ -1,4 +1,4 @@
-import I18N from '~/src/utils/I18N';
+import I18N from '~/assets/utils/I18N';
 import axios from 'axios'
 import { PontCore } from '~/services/pontCore'
 
@@ -19,7 +19,7 @@ export default ({ $config }: any) => {
 
     return instance(url, option).then((res) => {
       if (res.data.success) {
-        return res.data.content
+        return res.data
       } else {
         return Promise.reject({
           message: res.data.message || I18N.plugins.fetch.SrEv

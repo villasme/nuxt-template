@@ -11,7 +11,7 @@
     "requestOptions": {}
   },
   "isAutoTranslate": true,
-  "importI18N": "import I18N from '~/src/utils/I18N';",
+  "importI18N": "import I18N from '~/assets/utils/I18N';",
   "ignoreDir": "",
   "ignoreFile": "",
   "baiduAppid": "",

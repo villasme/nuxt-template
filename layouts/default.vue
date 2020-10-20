@@ -1,18 +1,19 @@
 <template>
   <div class="flex">
     <div class="left-menu">
-      <el-select v-model="currLang" placeholder="切换中英文" @change="changeLang">
-        <el-option label="中文" value="zh-CN" />
-        <el-option label="英文" value="en-US" />
-      </el-select>
+      <Select v-model="currLang" placeholder="切换中英文" @on-change="changeLang">
+        <Option label="中文" value="zh-CN" />
+        <Option label="英文" value="en-US" />
+      </Select>
     </div>
-    <Nuxt />
+    <div class="page-content">
+      <Nuxt />
+    </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import Cookie from 'js-cookie'
-
 export default Vue.extend({
   middleware: ['auth'],
   data () {
@@ -41,6 +42,11 @@ export default Vue.extend({
   width: 214px;
   min-height: 100vh;
   background: #35495e;
+}
+
+.page-content {
+  flex-grow: 1;
+  padding: 20px;
 }
 
 html {
